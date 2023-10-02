@@ -12,29 +12,7 @@ export default new Command({
   name: "ping",
   description: "Reply with pong!",
   type: ApplicationCommandType.ChatInput,
-  run({ interaction }) {
-    const row = new ActionRowBuilder<ButtonBuilder>({
-      components: [
-        new ButtonBuilder({
-          customId: "test-button",
-          label: "Clique aqui",
-          style: ButtonStyle.Success,
-        }),
-      ],
-    });
-    interaction.reply({
-      ephemeral: false,
-      content: "pong!",
-      components: [row],
-    });
+  async run({ interaction }) {
+    await interaction.reply({ content: "pong" });
   },
-
-  buttons: new Collection([
-    [
-      "test-button",
-      async (interaction) => {
-        interaction.update({ components: [] });
-      },
-    ],
-  ]),
 });
