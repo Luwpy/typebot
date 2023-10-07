@@ -6,7 +6,7 @@ import {
   Collection,
 } from "discord.js";
 import { Command } from "../../structs/types/Command";
-import { Interaction } from "aoi.js";
+
 
 export default new Command({
   name: "ping",
